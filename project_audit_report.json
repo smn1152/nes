@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "project_path": "/Users/saman/NESOSA-WP/salbion-group",
+    "project_type": "laravel",
+    "analysis_date": "2025-07-19T13:58:47.778714",
+    "analyzer_version": "3.0"
+  },
+  "general": {
+    "system": {
+      "platform": "macOS-15.5-arm64-arm-64bit",
+      "python_version": "3.11.9",
+      "analyzed_at": "2025-07-19T13:58:47.810310",
+      "tools_available": {
+        "pylint": true,
+        "bandit": true,
+        "safety": true,
+        "npm": true,
+        "composer": true,
+        "php": true,
+        "phpcs": true,
+        "pytest": true,
+        "tree": true
+      }
+    },
+    "file_stats": {
+      "python_files": 0,
+      "php_files": 89,
+      "blade_files": 1,
+      "js_files": 21,
+      "css_files": 5
+    },
+    "directory_structure": [
+      ".",
+      "├── app",
+      "│   ├── Filament",
+      "│   ├── Http",
+      "│   ├── Models",
+      "│   ├── Providers",
+      "│   ├── Services",
+      "│   └── Settings",
+      "├── bootstrap",
+      "│   └── cache",
+      "├── config",
+      "├── database",
+      "│   ├── factories",
+      "│   ├── migrations",
+      "│   └── seeders",
+      "├── node_modules",
+      "│   ├── @alpinejs",
+      "│   ├── @ampproject",
+      "│   ├── @esbuild",
+      "│   ├── @fontsource",
+      "│   ├── @isaacs",
+      "│   ├── @jridgewell",
+      "│   ├── @kurkle",
+      "│   ├── @rollup",
+      "│   ├── @tailwindcss",
+      "│   ├── @types",
+      "│   ├── @vue",
+      "│   ├── alpinejs",
+      "│   ├── ansi-regex",
+      "│   ├── ansi-styles",
+      "│   ├── asynckit",
+      "│   ├── axios",
+      "│   ├── call-bind-apply-helpers",
+      "│   ├── chalk",
+      "│   ├── chart.js",
+      "│   ├── chownr",
+      "│   ├── cliui",
+      "│   ├── color-convert",
+      "│   ├── color-name",
+      "│   ├── combined-stream",
+      "│   ├── concurrently",
+      "│   ├── cssesc",
+      "│   ├── delayed-stream",
+      "│   ├── detect-libc",
+      "│   ├── dunder-proto",
+      "│   ├── emoji-regex",
+      "│   ├── enhanced-resolve",
+      "│   ├── es-define-property",
+      "│   ├── es-errors",
+      "│   ├── es-object-atoms"
+    ]
+  },
+  "backend": {
+    "issues": [],
+    "stats": {
+      "migrations": {
+        "count": 19,
+        "latest": "2025_07_19_133748_add_indexes_to_tables.php",
+        "oldest": "0001_01_01_000000_create_users_table.php",
+        "with_foreign_keys": 1
+      },
+      "controllers": {
+        "count": 2,
+        "list": [
+          "Controller",
+          "ProductController"
+        ]
+      },
+      "models": {
+        "count": 8,
+        "list": [
+          "Category",
+          "Product",
+          "InnovationStory",
+          "User",
+          "Division",
+          "Location",
+          "CompanySetting",
+          "Page"
+        ]
+      }
+    }
+  },
+  "frontend": {
+    "issues": [
+      {
+        "type": "debug_statements",
+        "count": 7,
+        "samples": [
+          {
+            "file": "public/js/filament/forms/components/markdown-editor.js",
+            "line": 40,
+            "type": "alert",
+            "content": "`,{line:k+1,ch:0});for(var R=d;R<=k;R++)s.indentLine(R,\"subtract\");s.focus()}els"
+          },
+          {
+            "file": "public/js/filament/forms/components/file-upload.js",
+            "line": 2,
+            "type": "console",
+            "content": "`);for(let a of i){let n=Ms(a);if(n){t.name=n;continue}let l=As(a);if(l){t.size="
+          },
+          {
+            "file": "public/js/filament/forms/components/file-upload.js",
+            "line": 3,
+            "type": "confirm",
+            "content": "In order to be iterable, non-array objects must have a [Symbol.iterator]() metho"
+          },
+          {
+            "file": "public/js/filament/forms/components/file-upload.js",
+            "line": 40,
+            "type": "alert",
+            "content": "</svg>`;n(X)},o.readAsText(e)}),Ku=e=>{let t;try{t=new ImageData(e.width,e.heigh"
+          },
+          {
+            "file": "public/js/filament/forms/components/select.js",
+            "line": 1,
+            "type": "console",
+            "content": "var lt=Object.create;var Ge=Object.defineProperty;var ct=Object.getOwnPropertyDe"
+          }
+        ],
+        "severity": "low"
+      }
+    ],
+    "stats": {
+      "file_counts": {
+        "js_files": 21,
+        "css_files": 5,
+        "scss_files": 0,
+        "vue_files": 0,
+        "blade_files": 1
+      },
+      "frameworks": [
+        "Tailwind CSS",
+        "Vite"
+      ]
+    }
+  },
+  "security": {
+    "issues": [
+      {
+        "type": "env_misconfiguration",
+        "issues": [
+          "APP_ENV در حالت local قرار دارد"
+        ],
+        "severity": "high"
+      },
+      {
+        "type": "dangerous_functions",
+        "functions": [
+          {
+            "function": "exec(",
+            "total_uses": 2,
+            "files_count": 1,
+            "top_files": [
+              {
+                "file": "_ide_helper.php",
+                "count": 2
+              }
+            ]
+          }
+        ],
+        "severity": "critical"
+      },
+      {
+        "type": "sensitive_data_exposure",
+        "files": [
+          {
+            "file": ".env",
+            "sensitive_keys": [
+              "SECRET",
+              "PASSWORD",
+              "AWS_"
+            ],
+            "recommendation": "استفاده از متغیرهای محیطی و عدم ذخیره مقادیر حساس در کد"
+          },
+          {
+            "file": "config/auth.php",
+            "sensitive_keys": [
+              "password",
+              "database"
+            ],
+            "recommendation": "استفاده از متغیرهای محیطی و عدم ذخیره مقادیر حساس در کد"
+          },
+          {
+            "file": "config/app.php",
+            "sensitive_keys": [
+              "key",
+              "database"
+            ],
+            "recommendation": "استفاده از متغیرهای محیطی و عدم ذخیره مقادیر حساس در کد"
+          },
+          {
+            "file": "config/mail.php",
+            "sensitive_keys": [
+              "password"
+            ],
+            "recommendation": "استفاده از متغیرهای محیطی و عدم ذخیره مقادیر حساس در کد"
+          },
+          {
+            "file": "config/services.php",
+            "sensitive_keys": [
+              "key",
+              "secret"
+            ],
+            "recommendation": "استفاده از متغیرهای محیطی و عدم ذخیره مقادیر حساس در کد"
+          }
+        ],
+        "severity": "critical"
+      },
+      {
+        "type": "insecure_http_urls",
+        "issue": "استفاده از HTTP به جای HTTPS",
+        "files": [
+          {
+            "file": "public/js/filament/forms/components/rich-editor.js",
+            "urls": [
+              "http://www.w3.org/1998/Math/MathML",
+              "http://www.w3.org/2000/svg",
+              "http://www.w3.org/1999/xhtml"
+            ]
+          },
+          {
+            "file": "public/js/filament/forms/components/file-upload.js",
+            "urls": [
+              "http://www.w3.org/2000/svg",
+              "http://www.w3.org/2000/svg",
+              "http://www.w3.org/2000/svg"
+            ]
+          },
+          {
+            "file": "public/js/filament/forms/components/color-picker.js",
+            "urls": [
+              "http://www.w3.org/2000/svg"
+            ]
+          },
+          {
+            "file": "public/js/filament/filament/echo.js",
+            "urls": [
+              "http://js.pusher.com"
+            ]
+          },
+          {
+            "file": "public/js/filament/support/support.js",
+            "urls": [
+              "http://www.w3.org/2000/svg"
+            ]
+          }
+        ],
+        "severity": "medium"
+      }
+    ],
+    "scans": {
+      "npm_vulnerabilities": {
+        "total": 1,
+        "critical": 0,
+        "high": 0,
+        "moderate": 0,
+        "low": 1
+      }
+    }
+  },
+  "performance": {
+    "issues": [
+      {
+        "type": "missing_laravel_cache",
+        "missing": [
+          {
+            "command": "php artisan config:cache",
+            "purpose": "کش کردن config"
+          },
+          {
+            "command": "php artisan route:cache",
+            "purpose": "کش کردن route"
+          }
+        ],
+        "severity": "medium",
+        "recommendation": "اجرای دستورات کش برای بهبود عملکرد در production"
+      },
+      {
+        "type": "large_asset_files",
+        "count": 1,
+        "files": [
+          {
+            "file": "public/js/filament/forms/components/markdown-editor.js",
+            "type": "js",
+            "size_kb": 508.51
+          }
+        ],
+        "total_size_kb": 508.51,
+        "severity": "medium",
+        "recommendation": "استفاده از Code Splitting و Lazy Loading برای کاهش حجم فایل‌ها"
+      },
+      {
+        "type": "missing_indexes",
+        "tables": [
+          "0001_01_01_000001_create_cache_table",
+          "2025_07_18_195023_create_company_settings_table",
+          "2025_07_18_212221_create_divisions_table",
+          "2025_07_18_212222_create_innovation_stories_table",
+          "2025_07_18_212221_create_locations_table"
+        ],
+        "severity": "medium",
+        "recommendation": "اضافه کردن ایندکس‌ها برای ستون‌هایی که در WHERE، JOIN یا ORDER BY استفاده می‌شوند"
+      },
+      {
+        "type": "raw_queries",
+        "files": [
+          "database/migrations/2025_07_19_133748_add_indexes_to_tables.php"
+        ],
+        "severity": "low",
+        "recommendation": "استفاده از Query Builder یا ORM به جای Raw Queries برای امنیت و نگهداری بهتر"
+      }
+    ],
+    "metrics": {}
+  },
+  "testing": {
+    "issues": [
+      {
+        "type": "empty_tests",
+        "count": 1,
+        "severity": "medium"
+      },
+      {
+        "type": "no_ci_cd",
+        "issue": "هیچ پیکربندی CI/CD یافت نشد",
+        "severity": "medium",
+        "recommendation": "راه‌اندازی CI/CD با GitHub Actions یا GitLab CI برای اجرای خودکار تست‌ها"
+      }
+    ],
+    "coverage": null,
+    "stats": {
+      "total_tests": 2,
+      "unit_tests": 1,
+      "feature_tests": 1
+    }
+  },
+  "dependencies": {
+    "python": {},
+    "npm": {
+      "dependencies": {
+        "@alpinejs/persist": "3.14.9",
+        "@fontsource/inter": "5.2.6",
+        "@tailwindcss/forms": "0.5.10",
+        "alpinejs": "3.14.9",
+        "chart.js": "4.5.0",
+        "flatpickr": "4.6.13",
+        "sweetalert2": "11.6.13"
+      },
+      "devDependencies": {
+        "@tailwindcss/typography": "0.5.16",
+        "@tailwindcss/vite": "^4.0.0",
+        "axios": "^1.8.2",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^1.2.0",
+        "tailwindcss": "^4.0.0",
+        "vite": "^6.2.4"
+      }
+    },
+    "composer": {
+      "require": {
+        "php": "^8.2",
+        "akaunting/laravel-money": "^6.0",
+        "barryvdh/laravel-dompdf": "^3.1",
+        "cybercog/laravel-ban": "^4.10",
+        "dedoc/scramble": "^0.12.23",
+        "filament/filament": "^3.2",
+        "filament/spatie-laravel-settings-plugin": "^3.3",
+        "graham-campbell/markdown": "^16.0",
+        "intervention/image": "^3.11",
+        "itsgoingd/clockwork": "^5.3",
+        "laravel/cashier": "^15.7",
+        "laravel/framework": "^12.0",
+        "laravel/octane": "^2.11",
+        "laravel/pulse": "^1.4",
+        "laravel/sanctum": "^4.1",
+        "laravel/socialite": "^5.21",
+        "laravel/tinker": "^2.10.1",
+        "league/flysystem-aws-s3-v3": "^3.29",
+        "livewire/livewire": "^3.6",
+        "maatwebsite/excel": "^3.1"
+      },
+      "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.6",
+        "fakerphp/faker": "^1.23",
+        "laravel/pail": "^1.2.2",
+        "laravel/pint": "^1.24",
+        "laravel/sail": "^1.41",
+        "laravel/telescope": "^5.10",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^11.5.3",
+        "spatie/laravel-ray": "^1.40"
+      }
+    }
+  },
+  "recommendations": {
+    "critical": [
+      "حذف یا جایگزینی توابع خطرناک PHP مانند eval() و exec()",
+      "رفع مشکل امنیتی بحرانی: sensitive_data_exposure"
+    ],
+    "high": [
+      "تغییر APP_DEBUG به false و APP_ENV به production در محیط عملیاتی"
+    ],
+    "medium": [
+      "اجرای دستورات cache در Laravel برای بهبود عملکرد در production",
+      "راه‌اندازی CI/CD pipeline برای اجرای خودکار تست‌ها و deployment"
+    ],
+    "low": []
+  }
+}

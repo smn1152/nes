@@ -1,0 +1,251 @@
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 SALBION GROUP UPGRADE SCRIPT v5.0
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: Mode: DRY RUN[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 CREATING BACKUP
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would create backup in: /Users/saman/NESOSA-WP/salbion-group/.upgrade_backups_20250718_235400[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 INSTALLING NPM PACKAGES
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: @fontsource/inter already installed[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: alpinejs already installed[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: @tailwindcss/forms already installed[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: npm install @tailwindcss/typography --save-dev[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: npm install @tailwindcss/typography --save-dev[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 UPDATING ENVIRONMENT CONFIGURATION
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would add environment variables for Redis and Filament[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 UPDATING FRONTEND ASSETS
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would update resources/css/app.css with Inter font[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 RUNNING OPTIMIZATIONS
+================================[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: php artisan optimize:clear[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: php artisan optimize:clear[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: php artisan config:cache[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: php artisan config:cache[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: php artisan route:cache[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: php artisan route:cache[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: php artisan view:cache[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: php artisan view:cache[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: php artisan icons:cache[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: php artisan icons:cache[0m
+[0;35m[2025-07-18 23:54:00] 🔄 STEP: Executing: php artisan filament:upgrade[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would execute: php artisan filament:upgrade[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 CREATING DEPLOYMENT SCRIPTS
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: [DRY RUN] Would create deployment scripts in scripts/[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 UPGRADE COMPLETED!
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: Log file: /Users/saman/NESOSA-WP/salbion-group/upgrade_log_20250718_235400.txt[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 SALBION GROUP UPGRADE SCRIPT v5.0
+================================[0m
+[0;36m[2025-07-18 23:54:00] ℹ️  INFO: Mode: LIVE[0m
+[1m
+================================
+[2025-07-18 23:54:00] 🚀 CREATING BACKUP
+================================[0m
+[0;32m[2025-07-18 23:54:00] ✅ SUCCESS: Backed up: .env[0m
+[0;32m[2025-07-18 23:54:00] ✅ SUCCESS: Backed up: composer.json[0m
+[0;32m[2025-07-18 23:54:00] ✅ SUCCESS: Backed up: composer.lock[0m
+[0;32m[2025-07-18 23:54:00] ✅ SUCCESS: Backed up: package.json[0m
+[0;32m[2025-07-18 23:54:00] ✅ SUCCESS: Backed up: package-lock.json[0m
+[1m
+================================
+[2025-07-18 23:54:01] 🚀 INSTALLING NPM PACKAGES
+================================[0m
+[0;36m[2025-07-18 23:54:01] ℹ️  INFO: @fontsource/inter already installed[0m
+[0;36m[2025-07-18 23:54:01] ℹ️  INFO: alpinejs already installed[0m
+[0;36m[2025-07-18 23:54:01] ℹ️  INFO: @tailwindcss/forms already installed[0m
+[0;35m[2025-07-18 23:54:01] 🔄 STEP: Executing: npm install @tailwindcss/typography --save-dev[0m
+
+added 7 packages, and audited 110 packages in 1s
+
+23 packages are looking for funding
+  run `npm fund` for details
+
+1 low severity vulnerability
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[0;32m[2025-07-18 23:54:02] ✅ SUCCESS: Installed @tailwindcss/typography[0m
+[1m
+================================
+[2025-07-18 23:54:02] 🚀 UPDATING ENVIRONMENT CONFIGURATION
+================================[0m
+[0;32m[2025-07-18 23:54:02] ✅ SUCCESS: Added: FILAMENT_DARK_MODE=true[0m
+[1m
+================================
+[2025-07-18 23:54:02] 🚀 UPDATING FRONTEND ASSETS
+================================[0m
+[0;32m[2025-07-18 23:54:02] ✅ SUCCESS: Added Inter font to CSS[0m
+[0;35m[2025-07-18 23:54:02] 🔄 STEP: Executing: npm run build[0m
+
+> build
+> vite build
+
+vite v6.3.5 building for production...
+transforming...
+✓ 53 modules transformed.
+rendering chunks...
+computing gzip size...
+public/build/assets/inter-vietnamese-400-normal-DMkecbls.woff2     4.97 kB
+public/build/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2     5.10 kB
+public/build/assets/inter-vietnamese-500-normal-DOriooB6.woff2     5.11 kB
+public/build/assets/inter-vietnamese-700-normal-CGpBpxLq.woff2     5.20 kB
+public/build/assets/inter-greek-ext-400-normal-Bput3-QP.woff2      5.23 kB
+public/build/assets/inter-greek-ext-500-normal-B6guLgqG.woff2      5.40 kB
+public/build/assets/inter-greek-ext-700-normal-SzCdnevJ.woff2      5.42 kB
+public/build/assets/inter-greek-ext-600-normal-Cnui8OiR.woff2      5.43 kB
+public/build/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff      6.50 kB
+public/build/assets/inter-vietnamese-500-normal-mJboJaSs.woff      6.60 kB
+public/build/assets/inter-vietnamese-700-normal-DL6eWghQ.woff      6.63 kB
+public/build/assets/inter-vietnamese-600-normal-BuLX-rYi.woff      6.64 kB
+public/build/assets/inter-greek-ext-400-normal-XIH6-K3k.woff       7.06 kB
+public/build/assets/inter-greek-ext-500-normal-1SJLBQ3N.woff       7.19 kB
+public/build/assets/inter-greek-ext-600-normal-CCFnzSpK.woff       7.21 kB
+public/build/assets/inter-greek-ext-700-normal-D0KHSs-V.woff       7.21 kB
+public/build/assets/inter-cyrillic-400-normal-BLGc9T1a.woff2       7.71 kB
+public/build/assets/inter-greek-400-normal-DxZsaF_h.woff2          7.84 kB
+public/build/assets/inter-greek-500-normal-CeQXL5ds.woff2          7.90 kB
+public/build/assets/inter-cyrillic-500-normal-D4Vwzodn.woff2       7.90 kB
+public/build/assets/inter-greek-700-normal-Cxpycf-U.woff2          7.93 kB
+public/build/assets/inter-greek-600-normal-Dhlb-90d.woff2          7.96 kB
+public/build/assets/inter-cyrillic-600-normal-BGBWG807.woff2       7.97 kB
+public/build/assets/inter-cyrillic-700-normal-bGtGjVdZ.woff2       8.00 kB
+public/build/assets/inter-cyrillic-400-normal-alAqRL36.woff        9.78 kB
+public/build/assets/inter-cyrillic-700-normal-oWiwobpV.woff        9.91 kB
+public/build/assets/inter-greek-400-normal-C3I71FoW.woff           9.92 kB
+public/build/assets/inter-cyrillic-600-normal-vZ-N8GHY.woff        9.94 kB
+public/build/assets/inter-cyrillic-500-normal-BoeW9iIj.woff        9.94 kB
+public/build/assets/inter-greek-700-normal-DtGkhywV.woff           9.98 kB
+public/build/assets/inter-greek-500-normal-CSBZZ4CI.woff           9.98 kB
+public/build/assets/inter-greek-600-normal-BVGIV3oK.woff          10.03 kB
+public/build/assets/inter-cyrillic-ext-400-normal-Dc4VJyIJ.woff2  10.22 kB
+public/build/assets/inter-cyrillic-ext-500-normal-BShVwWPj.woff2  10.44 kB
+public/build/assets/inter-cyrillic-ext-600-normal-CaqZN2hq.woff2  10.46 kB
+public/build/assets/inter-cyrillic-ext-700-normal-ClVoMEGq.woff2  10.46 kB
+public/build/manifest.json                                        12.89 kB │ gzip:  1.22 kB
+public/build/assets/inter-cyrillic-ext-400-normal-BE2fNs0E.woff   13.34 kB
+public/build/assets/inter-cyrillic-ext-700-normal-Cg0zx2i8.woff   13.44 kB
+public/build/assets/inter-cyrillic-ext-500-normal-NrhEyngK.woff   13.44 kB
+public/build/assets/inter-cyrillic-ext-600-normal-t7rHAwBu.woff   13.46 kB
+public/build/assets/inter-latin-400-normal-C38fXH4l.woff2         23.66 kB
+public/build/assets/inter-latin-700-normal-Drs_5D37.woff2         24.25 kB
+public/build/assets/inter-latin-500-normal-Cerq10X2.woff2         24.27 kB
+public/build/assets/inter-latin-600-normal-LgqL8muc.woff2         24.45 kB
+public/build/assets/inter-latin-400-normal-CyCys3Eg.woff          30.70 kB
+public/build/assets/inter-latin-600-normal-CiBQ2DWP.woff          31.26 kB
+public/build/assets/inter-latin-500-normal-BL9OpVg8.woff          31.28 kB
+public/build/assets/inter-latin-700-normal-KTwiWvO9.woff          31.30 kB
+public/build/assets/inter-latin-ext-400-normal-C1nco2VV.woff2     35.00 kB
+public/build/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2     36.02 kB
+public/build/assets/inter-latin-ext-700-normal-CfWAu3Qq.woff2     36.24 kB
+public/build/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2     36.26 kB
+public/build/assets/inter-latin-ext-400-normal-77YHD8bZ.woff      47.56 kB
+public/build/assets/inter-latin-ext-500-normal-BxGbmqWO.woff      48.49 kB
+public/build/assets/inter-latin-ext-700-normal-Z3s-4e5M.woff      48.63 kB
+public/build/assets/inter-latin-ext-600-normal-CIVaiw4L.woff      48.67 kB
+public/build/assets/app-BKdu6fN2.css                              53.68 kB │ gzip: 11.16 kB
+public/build/assets/app-DNxiirP_.js                               35.32 kB │ gzip: 14.14 kB
+✓ built in 890ms
+[0;32m[2025-07-18 23:54:04] ✅ SUCCESS: Built frontend assets[0m
+[1m
+================================
+[2025-07-18 23:54:04] 🚀 RUNNING OPTIMIZATIONS
+================================[0m
+[0;35m[2025-07-18 23:54:04] 🔄 STEP: Executing: php artisan optimize:clear[0m
+
+   INFO  Clearing cached bootstrap files.  
+
+  config ........................................................................................................... 0.96ms DONE
+  cache ............................................................................................................ 6.83ms DONE
+  compiled ......................................................................................................... 0.73ms DONE
+  events ........................................................................................................... 0.33ms DONE
+  routes ........................................................................................................... 0.25ms DONE
+  views ............................................................................................................ 0.26ms DONE
+  blade-icons ...................................................................................................... 0.08ms DONE
+  filament ......................................................................................................... 0.42ms DONE
+
+[0;32m[2025-07-18 23:54:05] ✅ SUCCESS: Executed: php artisan optimize:clear[0m
+[0;35m[2025-07-18 23:54:05] 🔄 STEP: Executing: php artisan config:cache[0m
+
+   INFO  Configuration cached successfully.  
+
+[0;32m[2025-07-18 23:54:05] ✅ SUCCESS: Executed: php artisan config:cache[0m
+[0;35m[2025-07-18 23:54:05] 🔄 STEP: Executing: php artisan route:cache[0m
+
+   INFO  Routes cached successfully.  
+
+[0;32m[2025-07-18 23:54:06] ✅ SUCCESS: Executed: php artisan route:cache[0m
+[0;35m[2025-07-18 23:54:06] 🔄 STEP: Executing: php artisan view:cache[0m
+
+
+   INFO  Blade templates cached successfully.  
+
+[0;32m[2025-07-18 23:54:07] ✅ SUCCESS: Executed: php artisan view:cache[0m
+[0;35m[2025-07-18 23:54:07] 🔄 STEP: Executing: php artisan icons:cache[0m
+Blade icons manifest file generated successfully!
+[0;32m[2025-07-18 23:54:07] ✅ SUCCESS: Executed: php artisan icons:cache[0m
+[0;35m[2025-07-18 23:54:07] 🔄 STEP: Executing: php artisan filament:upgrade[0m
+  ⇂ public/js/filament/forms/components/color-picker.js  
+  ⇂ public/js/filament/forms/components/date-time-picker.js  
+  ⇂ public/js/filament/forms/components/file-upload.js  
+  ⇂ public/js/filament/forms/components/key-value.js  
+  ⇂ public/js/filament/forms/components/markdown-editor.js  
+  ⇂ public/js/filament/forms/components/rich-editor.js  
+  ⇂ public/js/filament/forms/components/select.js  
+  ⇂ public/js/filament/forms/components/tags-input.js  
+  ⇂ public/js/filament/forms/components/textarea.js  
+  ⇂ public/js/filament/tables/components/table.js  
+  ⇂ public/js/filament/widgets/components/chart.js  
+  ⇂ public/js/filament/widgets/components/stats-overview/stat/chart.js  
+  ⇂ public/js/filament/filament/app.js  
+  ⇂ public/js/filament/filament/echo.js  
+  ⇂ public/js/filament/notifications/notifications.js  
+  ⇂ public/js/filament/support/support.js  
+  ⇂ public/css/filament/forms/forms.css  
+  ⇂ public/css/filament/support/support.css  
+  ⇂ public/css/filament/filament/app.css  
+
+   INFO  Successfully published assets!  
+
+   INFO  Configuration cache cleared successfully.  
+
+   INFO  Route cache cleared successfully.  
+
+   INFO  Compiled views cleared successfully.  
+
+   INFO  Successfully upgraded!  
+
+[0;32m[2025-07-18 23:54:07] ✅ SUCCESS: Executed: php artisan filament:upgrade[0m
+[1m
+================================
+[2025-07-18 23:54:07] 🚀 CREATING DEPLOYMENT SCRIPTS
+================================[0m
+[0;32m[2025-07-18 23:54:08] ✅ SUCCESS: Created deployment script[0m
+[1m
+================================
+[2025-07-18 23:54:08] 🚀 UPGRADE COMPLETED!
+================================[0m
+[0;36m[2025-07-18 23:54:08] ℹ️  INFO: Log file: /Users/saman/NESOSA-WP/salbion-group/upgrade_log_20250718_235400.txt[0m
+[0;36m[2025-07-18 23:54:08] ℹ️  INFO: Backup location: /Users/saman/NESOSA-WP/salbion-group/.upgrade_backups_20250718_235400[0m

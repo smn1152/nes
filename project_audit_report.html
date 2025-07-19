@@ -1,0 +1,370 @@
+
+        <!DOCTYPE html>
+        <html lang="fa" dir="rtl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>گزارش تحلیل پروژه - salbion-group</title>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                
+                body {
+                    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+                    line-height: 1.8;
+                    color: #333;
+                    background-color: #f5f7fa;
+                }
+                
+                .container {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 20px;
+                }
+                
+                .header {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 40px;
+                    border-radius: 10px;
+                    margin-bottom: 30px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                }
+                
+                .header h1 {
+                    font-size: 2.5em;
+                    margin-bottom: 20px;
+                }
+                
+                .header-info {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin-top: 20px;
+                }
+                
+                .header-info-item {
+                    background: rgba(255,255,255,0.1);
+                    padding: 15px;
+                    border-radius: 5px;
+                }
+                
+                .summary-cards {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 20px;
+                    margin-bottom: 30px;
+                }
+                
+                .summary-card {
+                    background: white;
+                    padding: 25px;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                    text-align: center;
+                    transition: transform 0.3s ease;
+                }
+                
+                .summary-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+                }
+                
+                .summary-card h3 {
+                    color: #667eea;
+                    margin-bottom: 10px;
+                }
+                
+                .summary-card .number {
+                    font-size: 2.5em;
+                    font-weight: bold;
+                    color: #333;
+                }
+                
+                .card {
+                    background: white;
+                    border-radius: 10px;
+                    padding: 25px;
+                    margin-bottom: 25px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                }
+                
+                .card h2 {
+                    color: #2c3e50;
+                    margin-bottom: 20px;
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid #667eea;
+                }
+                
+                .card h3 {
+                    color: #34495e;
+                    margin-top: 20px;
+                    margin-bottom: 15px;
+                }
+                
+                .critical {
+                    color: #e74c3c;
+                    font-weight: bold;
+                }
+                
+                .high {
+                    color: #e67e22;
+                    font-weight: bold;
+                }
+                
+                .medium {
+                    color: #f39c12;
+                }
+                
+                .low {
+                    color: #3498db;
+                }
+                
+                .issue {
+                    margin-bottom: 20px;
+                    padding: 15px;
+                    border-right: 4px solid;
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                }
+                
+                .issue.critical {
+                    border-color: #e74c3c;
+                    background-color: #ffeee9;
+                }
+                
+                .issue.high {
+                    border-color: #e67e22;
+                    background-color: #fff5eb;
+                }
+                
+                .issue.medium {
+                    border-color: #f39c12;
+                    background-color: #fffbf0;
+                }
+                
+                .issue.low {
+                    border-color: #3498db;
+                    background-color: #f0f8ff;
+                }
+                
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                }
+                
+                th, td {
+                    padding: 12px;
+                    text-align: right;
+                    border-bottom: 1px solid #e0e0e0;
+                }
+                
+                th {
+                    background-color: #f8f9fa;
+                    font-weight: bold;
+                    color: #2c3e50;
+                }
+                
+                tr:hover {
+                    background-color: #f8f9fa;
+                }
+                
+                pre {
+                    background: #f5f5f5;
+                    padding: 15px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                    border: 1px solid #e0e0e0;
+                }
+                
+                code {
+                    background: #f5f5f5;
+                    padding: 2px 5px;
+                    border-radius: 3px;
+                    font-family: 'Courier New', monospace;
+                }
+                
+                ul {
+                    margin-right: 20px;
+                    margin-top: 10px;
+                }
+                
+                li {
+                    margin-bottom: 8px;
+                }
+                
+                .recommendation-list {
+                    list-style-type: none;
+                    margin-right: 0;
+                }
+                
+                .recommendation-list li {
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    background: #f8f9fa;
+                    border-radius: 5px;
+                    border-right: 3px solid #667eea;
+                }
+                
+                .footer {
+                    text-align: center;
+                    padding: 30px;
+                    color: #7f8c8d;
+                    border-top: 1px solid #e0e0e0;
+                    margin-top: 50px;
+                }
+                
+                @media (max-width: 768px) {
+                    .header h1 {
+                        font-size: 1.8em;
+                    }
+                    
+                    .summary-cards {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .container {
+                        padding: 10px;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>گزارش تحلیل جامع پروژه</h1>
+                    <div class="header-info">
+                        <div class="header-info-item">
+                            <strong>نام پروژه:</strong> salbion-group
+                        </div>
+                        <div class="header-info-item">
+                            <strong>نوع پروژه:</strong> LARAVEL
+                        </div>
+                        <div class="header-info-item">
+                            <strong>تاریخ تحلیل:</strong> 2025/07/19 - 13:58
+                        </div>
+                        <div class="header-info-item">
+                            <strong>نسخه تحلیلگر:</strong> 3.0
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>مجموع مسائل</h3>
+                        <div class="number">11</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>مسائل بحرانی</h3>
+                        <div class="number critical">2</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>مسائل مهم</h3>
+                        <div class="number high">1</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>فایل‌های تحلیل شده</h3>
+                        <div class="number">116</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>📊 خلاصه اجرایی</h2>
+                    <p>این گزارش حاصل تحلیل جامع و خودکار پروژه شما از جنبه‌های مختلف امنیتی، عملکردی، ساختاری و کیفیت کد است.</p>
+                    
+                    <h3>وضعیت کلی پروژه</h3>
+                    <p style='font-size: 1.2em; padding: 15px; background: #f8f9fa; border-radius: 5px;'>⚠️ <span class='critical'>نیازمند توجه فوری</span> - مسائل امنیتی بحرانی یافت شد</p>
+                    
+                    <h3>آمار کلی مسائل</h3>
+                    <table>
+                        <tr>
+                            <th>بخش</th>
+                            <th>تعداد مسائل</th>
+                            <th>مسائل بحرانی</th>
+                            <th>وضعیت</th>
+                        </tr>
+                        <tr>
+                            <td>امنیت</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td><span class="critical">❌ بحرانی</span></td>
+                        </tr>
+                        <tr>
+                            <td>عملکرد</td>
+                            <td>4</td>
+                            <td>0</td>
+                            <td><span class="high">⚠️ نیازمند توجه</span></td>
+                        </tr>
+                        <tr>
+                            <td>بک‌اند</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><span style="color: #27ae60">✅ خوب</span></td>
+                        </tr>
+                        <tr>
+                            <td>فرانت‌اند</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td><span class="medium">🔶 متوسط</span></td>
+                        </tr>
+                        <tr>
+                            <td>تست‌ها</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td><span class="medium">🔶 متوسط</span></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="card">
+                    <h2>💡 توصیه‌های بهبود</h2>
+                    
+                    <h3 class='critical'>توصیه‌های بحرانی</h3><ul class='recommendation-list'><li>حذف یا جایگزینی توابع خطرناک PHP مانند eval() و exec()</li><li>رفع مشکل امنیتی بحرانی: sensitive_data_exposure</li></ul><h3 class='high'>توصیه‌های با اولویت بالا</h3><ul class='recommendation-list'><li>تغییر APP_DEBUG به false و APP_ENV به production در محیط عملیاتی</li></ul><h3 class='medium'>توصیه‌های با اولویت متوسط</h3><ul class='recommendation-list'><li>اجرای دستورات cache در Laravel برای بهبود عملکرد در production</li><li>راه‌اندازی CI/CD pipeline برای اجرای خودکار تست‌ها و deployment</li></ul>
+                </div>
+                
+                <div class="card"><h2>🔒 امنیت</h2><h3>مسائل یافت شده</h3><div class="issue critical"><h4>dangerous_functions <span class='critical'>(critical)</span></h4><strong>موارد یافت شده:</strong><ul><li>exec( - 2 استفاده در 1 فایل</li></ul></div><div class="issue critical"><h4>sensitive_data_exposure <span class='critical'>(critical)</span></h4><strong>فایل‌های مرتبط:</strong><ul><li><code>.env</code></li><li><code>config/auth.php</code></li><li><code>config/app.php</code></li><li><code>config/mail.php</code></li><li><code>config/services.php</code></li></ul></div><div class="issue high"><h4>env_misconfiguration <span class='high'>(high)</span></h4></div><div class="issue medium"><h4>insecure_http_urls <span class='medium'>(medium)</span></h4><p>استفاده از HTTP به جای HTTPS</p><strong>فایل‌های مرتبط:</strong><ul><li><code>public/js/filament/forms/components/rich-editor.js</code></li><li><code>public/js/filament/forms/components/file-upload.js</code></li><li><code>public/js/filament/forms/components/color-picker.js</code></li><li><code>public/js/filament/filament/echo.js</code></li><li><code>public/js/filament/support/support.js</code></li></ul></div><h3>نتایج اسکن‌های امنیتی</h3><h4>npm_vulnerabilities</h4><table><tr><td>total</td><td>1</td></tr><tr><td>critical</td><td>0</td></tr><tr><td>high</td><td>0</td></tr><tr><td>moderate</td><td>0</td></tr><tr><td>low</td><td>1</td></tr></table></div>
+                <div class="card"><h2>⚡ عملکرد</h2><h3>مسائل یافت شده</h3><div class="issue medium"><h4>missing_laravel_cache <span class='medium'>(medium)</span></h4><p><strong>توصیه:</strong> اجرای دستورات کش برای بهبود عملکرد در production</p></div><div class="issue medium"><h4>large_asset_files <span class='medium'>(medium)</span></h4><strong>فایل‌های مرتبط:</strong><ul><li><code>public/js/filament/forms/components/markdown-editor.js</code></li></ul><p><strong>توصیه:</strong> استفاده از Code Splitting و Lazy Loading برای کاهش حجم فایل‌ها</p></div><div class="issue medium"><h4>missing_indexes <span class='medium'>(medium)</span></h4><p><strong>توصیه:</strong> اضافه کردن ایندکس‌ها برای ستون‌هایی که در WHERE، JOIN یا ORDER BY استفاده می‌شوند</p></div><div class="issue low"><h4>raw_queries <span class='low'>(low)</span></h4><strong>فایل‌های مرتبط:</strong><ul><li><code>database/migrations/2025_07_19_133748_add_indexes_to_tables.php</code></li></ul><p><strong>توصیه:</strong> استفاده از Query Builder یا ORM به جای Raw Queries برای امنیت و نگهداری بهتر</p></div></div>
+                <div class="card"><h2>🔧 بک‌اند</h2><h3>آمار و ارقام</h3><table><tr><th colspan='2'>migrations</th></tr><tr><td style='padding-right: 40px;'>count</td><td>19</td></tr><tr><td style='padding-right: 40px;'>latest</td><td>2025_07_19_133748_add_indexes_to_tables.php</td></tr><tr><td style='padding-right: 40px;'>oldest</td><td>0001_01_01_000000_create_users_table.php</td></tr><tr><td style='padding-right: 40px;'>with_foreign_keys</td><td>1</td></tr><tr><th colspan='2'>controllers</th></tr><tr><td style='padding-right: 40px;'>count</td><td>2</td></tr><tr><td style='padding-right: 40px;'>list</td><td>['Controller', 'ProductController']</td></tr><tr><th colspan='2'>models</th></tr><tr><td style='padding-right: 40px;'>count</td><td>8</td></tr><tr><td style='padding-right: 40px;'>list</td><td>['Category', 'Product', 'InnovationStory', 'User', 'Division', 'Location', 'CompanySetting', 'Page']</td></tr></table></div>
+                <div class="card"><h2>🎨 فرانت‌اند</h2><h3>آمار و ارقام</h3><table><tr><th colspan='2'>file_counts</th></tr><tr><td style='padding-right: 40px;'>js_files</td><td>21</td></tr><tr><td style='padding-right: 40px;'>css_files</td><td>5</td></tr><tr><td style='padding-right: 40px;'>scss_files</td><td>0</td></tr><tr><td style='padding-right: 40px;'>vue_files</td><td>0</td></tr><tr><td style='padding-right: 40px;'>blade_files</td><td>1</td></tr><tr><td>frameworks</td><td>['Tailwind CSS', 'Vite']</td></tr></table><h3>مسائل یافت شده</h3><div class="issue low"><h4>debug_statements <span class='low'>(low)</span></h4><p><strong>تعداد:</strong> 7 مورد</p></div></div>
+                <div class="card"><h2>🧪 تست‌ها</h2><h3>آمار و ارقام</h3><table><tr><td>total_tests</td><td>2</td></tr><tr><td>unit_tests</td><td>1</td></tr><tr><td>feature_tests</td><td>1</td></tr></table><h3>مسائل یافت شده</h3><div class="issue medium"><h4>empty_tests <span class='medium'>(medium)</span></h4><p><strong>تعداد:</strong> 1 مورد</p></div><div class="issue medium"><h4>no_ci_cd <span class='medium'>(medium)</span></h4><p>هیچ پیکربندی CI/CD یافت نشد</p><p><strong>توصیه:</strong> راه‌اندازی CI/CD با GitHub Actions یا GitLab CI برای اجرای خودکار تست‌ها</p></div></div>
+                
+                <div class="card">
+                    <h2>📦 وابستگی‌ها</h2>
+                    <h3>وابستگی‌های Composer</h3><table><tr><th>پکیج</th><th>نسخه</th></tr><tr><td><code>php</code></td><td>^8.2</td></tr><tr><td><code>akaunting/laravel-money</code></td><td>^6.0</td></tr><tr><td><code>barryvdh/laravel-dompdf</code></td><td>^3.1</td></tr><tr><td><code>cybercog/laravel-ban</code></td><td>^4.10</td></tr><tr><td><code>dedoc/scramble</code></td><td>^0.12.23</td></tr><tr><td><code>filament/filament</code></td><td>^3.2</td></tr><tr><td><code>filament/spatie-laravel-settings-plugin</code></td><td>^3.3</td></tr><tr><td><code>graham-campbell/markdown</code></td><td>^16.0</td></tr><tr><td><code>intervention/image</code></td><td>^3.11</td></tr><tr><td><code>itsgoingd/clockwork</code></td><td>^5.3</td></tr></table><h3>وابستگی‌های NPM</h3><table><tr><th>پکیج</th><th>نسخه</th></tr><tr><td><code>@alpinejs/persist</code></td><td>3.14.9</td></tr><tr><td><code>@fontsource/inter</code></td><td>5.2.6</td></tr><tr><td><code>@tailwindcss/forms</code></td><td>0.5.10</td></tr><tr><td><code>alpinejs</code></td><td>3.14.9</td></tr><tr><td><code>chart.js</code></td><td>4.5.0</td></tr><tr><td><code>flatpickr</code></td><td>4.6.13</td></tr><tr><td><code>sweetalert2</code></td><td>11.6.13</td></tr></table>
+                </div>
+                
+                <div class="card">
+                    <h2>🛠️ اطلاعات سیستم و ابزارها</h2>
+                    <table>
+                        <tr>
+                            <th>پلتفرم</th>
+                            <td>macOS-15.5-arm64-arm-64bit</td>
+                        </tr>
+                        <tr>
+                            <th>نسخه Python</th>
+                            <td>3.11.9</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>ابزارهای موجود</h3>
+                    <table>
+                        <tr>
+                            <th>ابزار</th>
+                            <th>وضعیت</th>
+                        </tr>
+                        <tr><td>pylint</td><td>✅ نصب شده</td></tr><tr><td>bandit</td><td>✅ نصب شده</td></tr><tr><td>safety</td><td>✅ نصب شده</td></tr><tr><td>npm</td><td>✅ نصب شده</td></tr><tr><td>composer</td><td>✅ نصب شده</td></tr><tr><td>php</td><td>✅ نصب شده</td></tr><tr><td>phpcs</td><td>✅ نصب شده</td></tr><tr><td>pytest</td><td>✅ نصب شده</td></tr><tr><td>tree</td><td>✅ نصب شده</td></tr>
+                    </table>
+                </div>
+                
+                <div class="footer">
+                    <p>تولید شده توسط Advanced Project Analyzer v3.0</p>
+                    <p>تاریخ تولید: 2025/07/19 - 13:58:57</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        
