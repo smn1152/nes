@@ -23,3 +23,24 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 _ide_helper.php
+
+# Backup files
+*.backup
+.upgrade_backups*/
+upgrade_log_*.txt
+premium_features_log_*.txt
+project_audit_report.*
+
+# Shell scripts logs
+*.sh.log
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
