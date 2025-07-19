@@ -44,3 +44,23 @@ project_audit_report.*
 .DS_Store
 Thumbs.db
 
+
+# Backup files
+*.backup
+.upgrade_backups*/
+upgrade_log_*.txt
+premium_features_log_*.txt
+project_audit_report.*
+
+# Shell scripts logs
+*.sh.log
+
+# IDE specific files (if not already present)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files (if not already present)
+.DS_Store
+Thumbs.db
